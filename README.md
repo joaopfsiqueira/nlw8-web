@@ -23,5 +23,6 @@
 
 
 # O que é Handlessui:
+- Visa acessibilidade e facilidade em desenvolver algo.
 - Podemos utilizar diversos componentes importados, como menu, listbox, popover. Podendo acessar por components, como: Popover.Button
 - Uma bibliteca que simplica e MUITO a parte de useState. No commit de numero 8 do rep, da para ver o quanto de código utilizamos para fazer funcionar o useState ao clicar no botão e colocar o hello world. O comparativo do commit 8 com o 9 no Widget.tsx é absurdo.
