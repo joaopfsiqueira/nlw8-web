@@ -1,5 +1,7 @@
 import html2canvas from "html2canvas";
 import { Camera } from "phosphor-react";
+import { useState } from "react";
+import { Loading } from "../Loading";
 
 export function ScreenshotButton() {
 
@@ -21,8 +23,9 @@ export function ScreenshotButton() {
         className="p-2 bg-zinc-800 rounded-md border-transparent hover:bg-zinc-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-brand-500"
         onClick={handleTakeScreenshot}
         >
-
-        <Camera className="h-6 w-6 text-zinc-100"></Camera>
+        
+        {/* Ternario para sempre que estiver carregando o screenshot aparecer loading e quando n estiver aparecer o botão para tirar o screenshot. */}
+        {isScreenshotReady ? <Loading /> : <Camera className="h-6 w-6 text-zinc-100"></Camera>}
 
         </button>
     )
