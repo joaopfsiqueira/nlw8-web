@@ -21,6 +21,7 @@
 - Integra a extensão do vscode "Tailwind CSS Intellisense.
 - Podemos criar nossas próprias cores no tailwind. Basta ir no tailwind.config.js -> extends, selecionar a propriedade color, atribuir um nome para essa cor e as tonalidades dela. Depois, basta atribuir o código hexadecimal. Usamos esse exemplo na cor "brand"
 - Outra coisa excelente é que podemos colocar qualquer coisa no de style dentro do className, visto que o tailwind interpreta o código do jeito dele. Vale muito à pena dar uma olhada na documentação deles.
+- Simples controle de responsividade utilizando tags como md, sm, lg, xl.
 
 
 # O que é Handlessui:
