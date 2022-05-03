@@ -1,6 +1,6 @@
 # NLW 8 Impulse
 > Vite
-- usamos o "npm create vite@latest", para pegar a ultima versão do VITE. 
+- https://vitejs.dev/guide/#trying-vite-online
 
 > Tailwindcss:
 - https://tailwindcss.com/docs/installation/using-postcss
@@ -10,6 +10,7 @@
 
 
 # O que é vite:
+- usamos o "npm create vite@latest", para pegar a ultima versão do VITE. 
 - Basicamente um pacote que nos ajuda a criar um projectName, selecionar o framework (Ex: react) e a variante (ex: react-typescript). É excelente para criar novos projetos do 0, fornecendo todo o básico. 
 
 
