@@ -1,6 +1,7 @@
 //o phospor-react nos permite importar diret o icone com o nome, para achar os icones é só acessar a biblioteca.
 import { ChatTeardropDots } from 'phosphor-react'
 import { Popover } from '@headlessui/react'
+import { WidgetForm } from './WidgetForm'
 
 
 export function Widget () {
@@ -9,7 +10,9 @@ export function Widget () {
         //Popover = div Popover.button = botao popover.panel = p
         <Popover className="absolute bottom-5 right-5">
 
-            <Popover.Panel>Hello World</Popover.Panel>
+            <Popover.Panel>
+               <WidgetForm/>
+            </Popover.Panel>
 
             <Popover.Button className="bg-brand-500 rounded-full px-3 h-12 text-white flex items-center group" >
             {/* caso queira, basta colocar o mouse em cima do w-6 para ver o tamano em px. Declarando que tudo dentro de button é o mesmo group para ser retuilizado o grouphover*/}
