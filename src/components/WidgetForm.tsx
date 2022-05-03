@@ -1,3 +1,5 @@
+import { CloseButton } from "./CloseButton";
+
 export function WidgetForm() {
 
     //o calc é um jeito que o tailwind tem de calcular o tamanho total da tela e fazer algo com isso.
@@ -8,6 +10,8 @@ export function WidgetForm() {
             
             <header>
                 <span className="text-xl leading-6">Deixe seu feedback</span>
+                <CloseButton></CloseButton>
+
             </header>
             
             <p>Hello World</p>
