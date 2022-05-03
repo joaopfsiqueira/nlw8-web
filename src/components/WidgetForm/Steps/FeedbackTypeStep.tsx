@@ -1,3 +1,4 @@
+import { CloseButton } from "../../CloseButton";
 import { feedbackTypes, FeedbackType } from "../index";
 
 interface FeedbackTypeStepProps {
@@ -6,6 +7,14 @@ interface FeedbackTypeStepProps {
 
 export function FeedbackTypeStep({ onFeedbackTypeChanged }: FeedbackTypeStepProps) {
     return (
+        //esse <> abaixo é um fragment, ele permite que o react aceite elementos um embaixo do outro.
+        <>
+        <header>
+        <span className="text-xl leading-6">Deixe seu feedback</span>
+        <CloseButton/>
+        </header>
+
+
         <div className="flex py-8 gap-2 w-full">
                  {/* o map vai percorrer o objeto feedbackTypes e vai criar um elemento por vez, ou seja, vai criar um elemento por cada feedbackType */}
                  {/* recebendo chave e valor. */}
@@ -26,5 +35,6 @@ export function FeedbackTypeStep({ onFeedbackTypeChanged }: FeedbackTypeStepProp
                     )
                 })}
             </div>
+        </>
     )
 }

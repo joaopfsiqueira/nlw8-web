@@ -7,6 +7,7 @@ import bugImageUrl from "../../assets/bug.svg";
 import ideaImageUrl from "../../assets/idea.svg";
 import thoughtImageUrl from "../../assets/thought.svg";
 import { FeedbackTypeStep } from "./Steps/FeedbackTypeStep";
+import { FeedbackContentStep } from "./Steps/FeedbackContentStep";
 
 //criamos um objeto para toda vez que uma pessoa quiser adicionar um novo feedback é só vir no objeto abaixo e adicionar.
 //função está sendo usada no "FeedbackTypeStep"
@@ -45,23 +46,26 @@ export function WidgetForm() {
     const [feedbackType, setFeedbackType] = useState<FeedbackType | null >(null);
 
 
+    function handleRestartFeedback() {
+        setFeedbackType(null);
+    }
+
+
     //o calc é um jeito que o tailwind tem de calcular o tamanho total da tela e fazer algo com isso.
     // no caso, estamos pegando o tamanho da largura da tela e diminuindo 2rem, ou certo, vai esticar na tela toda com uma distancia de 2rem das pontas.
     // o md: w-auto diz que em telas maiores, o calculo anterior não será utilizado, tornando o form responsivo. 
     return (
         <div className="bg-zinc-900 p-4 relative rounded-2xl mb-4 flex flex-col items-center shadow-lg w-[calc(100vw-2rem)] md:w-auto">
-            
-            <header>
-                <span className="text-xl leading-6">Deixe seu feedback</span>
-                <CloseButton></CloseButton>
-
-            </header>
+        
             
             {/* nesse caso, se a pessoa selecionar o tipo de feedback, ele some com o formulario. */}
             {!feedbackType ? (
                  <FeedbackTypeStep onFeedbackTypeChanged={setFeedbackType} />
             ) : (
-                <p>Hello World</p>
+                <FeedbackContentStep 
+                feedbackType={feedbackType}
+                onFeedbackRestartRequested={handleRestartFeedback}
+                />
             )}
             
             <footer>
