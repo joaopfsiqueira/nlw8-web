@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 
-import { CloseButton } from "./CloseButton";
+import { CloseButton } from "../CloseButton";
 //importamos as imagem 
-import bugImageUrl from "../assets/bug.svg";
-import ideaImageUrl from "../assets/idea.svg";
-import thoughtImageUrl from "../assets/thought.svg";
+import bugImageUrl from "../../assets/bug.svg";
+import ideaImageUrl from "../../assets/idea.svg";
+import thoughtImageUrl from "../../assets/thought.svg";
 
 //criamos um objeto para toda vez que uma pessoa quiser adicionar um novo feedback é só vir no objeto abaixo e adicionar.
 const feedbackTypes = {
