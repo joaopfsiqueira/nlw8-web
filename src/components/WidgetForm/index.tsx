@@ -8,6 +8,7 @@ import ideaImageUrl from "../../assets/idea.svg";
 import thoughtImageUrl from "../../assets/thought.svg";
 import { FeedbackTypeStep } from "./Steps/FeedbackTypeStep";
 import { FeedbackContentStep } from "./Steps/FeedbackContentStep";
+import { FeedbackSuccessStep } from "./Steps/FeedbackSuccessStep";
 
 //criamos um objeto para toda vez que uma pessoa quiser adicionar um novo feedback é só vir no objeto abaixo e adicionar.
 //função está sendo usada no "FeedbackTypeStep"
@@ -44,9 +45,11 @@ export type FeedbackType = keyof typeof feedbackTypes
 export function WidgetForm() {
     //criando um estado para o tipo de feedback, ou certo, ele vai esperar o FeedbackType ou null.
     const [feedbackType, setFeedbackType] = useState<FeedbackType | null >(null);
+    const [feedbackSent, setFeedbackSent] = useState(false)
 
 
     function handleRestartFeedback() {
+        setFeedbackSent(false)
         setFeedbackType(null);
     }
 
@@ -56,17 +59,23 @@ export function WidgetForm() {
     // o md: w-auto diz que em telas maiores, o calculo anterior não será utilizado, tornando o form responsivo. 
     return (
         <div className="bg-zinc-900 p-4 relative rounded-2xl mb-4 flex flex-col items-center shadow-lg w-[calc(100vw-2rem)] md:w-auto">
-        
             
-            {/* nesse caso, se a pessoa selecionar o tipo de feedback, ele some com o formulario. */}
+            {/* ternario que valida se o feedbacksent foi enviado ou não, se for, retorna o feedbacksucess. */}
+            {feedbackSent ? (<FeedbackSuccessStep onFeedbackRestartRequested={handleRestartFeedback}/>) : (
+                <>
+                {/* nesse caso, se a pessoa selecionar o tipo de feedback, ele some com o formulario. */}
             {!feedbackType ? (
                  <FeedbackTypeStep onFeedbackTypeChanged={setFeedbackType} />
             ) : (
                 <FeedbackContentStep 
                 feedbackType={feedbackType}
                 onFeedbackRestartRequested={handleRestartFeedback}
+                onFeedbackSent={()=> setFeedbackSent(true)}
                 />
             )}
+                </>
+            )}
+            
             
             <footer>
                 {/* colocando um distanciamento do underline com offset. (propriedade css) */}
